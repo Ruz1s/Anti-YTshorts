@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Anti-YTshorts",
+  "description": "Advertencia periódica para sitios distractores como YouTube Shorts",
+  "version": "1.4.2",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"]
+}
