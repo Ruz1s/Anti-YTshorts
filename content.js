@@ -48,14 +48,19 @@
     icon.innerHTML = '';
     icon.style.fontSize = '45px';
 
+    const isSpanish = navigator.language && navigator.language.startsWith('es');
+    const titleText = isSpanish ? '¡ATENCIÓN!' : 'WARNING!';
+    const bodyText = isSpanish
+      ? 'Estás en un sitio distractor (Youtube Shorts).<br><center>Vuelva a sus tareas productivas.</center>'
+      : 'You are on a distracting site (Youtube Shorts).<br><center>Get back to your productive tasks.</center>';
+
     const message = document.createElement('div');
     message.style.flex = '1';
     message.style.fontSize = '26px';
     message.style.lineHeight = '1.65';
     message.innerHTML = `
-      <strong><center>¡ATENCIÓN!</center></strong><br>
-      Estás en un sitio distractor (Youtube Shorts).<br>
-      <center>Vuelva a sus tareas productivas.</center>
+      <strong><center>${titleText}</center></strong><br>
+      ${bodyText}
     `;
 
     const dismissBtn = document.createElement('button');
